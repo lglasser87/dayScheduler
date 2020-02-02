@@ -26,48 +26,48 @@
   <div class="container">
     <!-- Timeblocks go here -->
     <div class="row">
-      <div class="time time-block col-1 scheduler" data-value="9">9AM</div>
-      <textarea class="col-10" id="textArea"></textarea>
+      <div class="time time-block col-1">9AM</div>
+      <textarea class="col-10 scheduler" data-value=9 id="textArea"></textarea>
       <button type="button" class="saveBtn col-1"></button>
     </div>
     <div class="row">
-      <div class="time time-block col-1 scheduler" data-value="10">10AM</div>
-      <textarea class="col-10" id="textArea"></textarea>
+      <div class="time time-block col-1">10AM</div>
+      <textarea class="col-10 scheduler" data-value=10 id="textArea"></textarea>
       <button type="button" class="saveBtn col-1"></button>
     </div>
     <div class="row">
-      <div class="time time-block col-1 scheduler" data-value="11">11AM</div>
-      <textarea class="col-10" id="textArea"></textarea>
+      <div class="time time-block col-1" >11AM</div>
+      <textarea class="col-10 scheduler" data-value=11 id="textArea"></textarea>
       <button type="button" class="saveBtn col-1"></button>
     </div>
     <div class="row">
-      <div class="time time-block col-1 scheduler" data-value="12">12PM</div>
-      <textarea class="col-10" id="textArea"></textarea>
+      <div class="time time-block col-1">12PM</div>
+      <textarea class="col-10 scheduler" data-value=12 id="textArea"></textarea>
       <button type="button" class="saveBtn col-1"></button>
     </div>
     <div class="row">
-      <div class="time time-block col-1 scheduler" data-value="1">1PM</div>
-      <textarea class="col-10" id="textArea"></textarea>
+      <div class="time time-block col-1" >1PM</div>
+      <textarea class="col-10 scheduler" data-value=13 id="textArea"></textarea>
       <button type="button" class="saveBtn col-1"></button>
     </div>
     <div class="row">
-      <div class="time time-block col-1 scheduler" data-value="2">2PM</div>
-      <textarea class="col-10" id="textArea"></textarea>
+      <div class="time time-block col-1">2PM</div>
+      <textarea class="col-10 scheduler" data-value=14 id="textArea"></textarea>
       <button type="button" class="saveBtn col-1"></button>
     </div>
     <div class="row">
-      <div class="time time-block col-1 scheduler" data-value="3">3PM</div>
-      <textarea class="col-10" id="textArea"></textarea>
+      <div class="time time-block col-1">3PM</div>
+      <textarea class="col-10 scheduler" data-value=15 id="textArea"></textarea>
       <button type="button" class="saveBtn col-1"></button>
     </div>
     <div class="row">
-      <div class="time time-block col-1 scheduler" data-value="4">4PM</div>
-      <textarea class="col-10" id="textArea"></textarea>
+      <div class="time time-block col-1" >4PM</div>
+      <textarea class="col-10 scheduler" data-value=16 id="textArea"></textarea>
       <button type="button" class="saveBtn col-1"></button>
     </div>
     <div class="row">
-      <div class="time time-block col-1 scheduler" data-value="5">5PM</div>
-      <textarea class="col-10" id="textArea"></textarea>
+      <div class="time time-block col-1">5PM</div>
+      <textarea class="col-10 scheduler" data-value=17 id="textArea"></textarea>
       <button type="button" class="saveBtn col-1"></button>
     </div>
   </div>
@@ -83,16 +83,16 @@
         }
       });
     });
-    var hours = moment().format('h');
+    var hours = moment().format('H');
     console.log("current time: " + hours);
     const scdArr = $('.scheduler').toArray();
     for (let i = 0; i < scdArr.length; i++) {
-      const thisRowId = "#" + scdArr[i].id;
-      var timeBlock = $(thisRowId).data().value;
-      console.log(timeBlock);
-      if (time > timeBlock) {
+      const thisRowId = scdArr[i];
+      var tSpace = $(thisRowId).data().value;
+      console.log(tSpace);
+      if (hours > tSpace) {
         $(thisRowId).addClass('past');
-      } else if (hours < timeBlock) {
+      } else if (hours < tSpace) {
         $(thisRowId).addClass('future');
       } else {
         $(thisRowId).addClass('present');
